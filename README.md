@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ARC AI
 
-## Getting Started
+Chat-first ARC App Kit UI built with Next.js.
 
-First, run the development server:
+Supported chat actions:
+
+- `Swap 1 USDC to EURC on Arc`
+- `Bridge 5 USDC to Ethereum`
+- `Send 2 USDC to 0x...`
+- `What is my USDC balance?`
+
+## Run
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Environment
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Create `.env.local`:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```env
+NEXT_PUBLIC_ARC_KIT_KEY=your_circle_kit_key
+```
 
-## Learn More
+`NEXT_PUBLIC_ARC_KIT_KEY` is required for swap because ARC App Kit swap uses a Circle kit key.
 
-To learn more about Next.js, take a look at the following resources:
+## ARC docs used
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Send](https://docs.arc.network/app-kit/send)
+- [Bridge](https://docs.arc.network/app-kit/bridge)
+- [Swap](https://docs.arc.network/app-kit/swap)
+- [Swap tokens across chains](https://docs.arc.network/app-kit/quickstarts/swap-tokens-crosschain)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Notes
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- This app uses the connected browser wallet through `createViemAdapterFromProvider`.
+- Testnet defaults are `Arc_Testnet`, `Ethereum_Sepolia`, `Base_Sepolia`, and `Arbitrum_Sepolia`.
+- Bridge currently supports `USDC` only, matching App Kit behavior.
