@@ -247,9 +247,14 @@ export function ChatShell() {
 
   return (
     <main className="flex min-h-screen flex-col bg-[#f7f7f2] px-4 py-8 text-black">
-      <h1 className="text-center text-2xl font-semibold tracking-[0.3em] text-black">
-        ARC AI
-      </h1>
+      <div className="text-center">
+        <h1 className="text-2xl font-semibold tracking-[0.3em] text-black">
+          INDRA AI
+        </h1>
+        <p className="mt-2 text-xs uppercase tracking-[0.28em] text-black/45">
+          on ARC
+        </p>
+      </div>
 
       <div className="flex flex-1 items-center justify-center py-8">
         <section className="flex h-[78vh] w-full max-w-3xl flex-col overflow-hidden rounded-[28px] border border-black/10 bg-white shadow-[0_24px_80px_rgba(15,23,42,0.08)]">
